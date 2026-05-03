@@ -1,0 +1,13 @@
+python-dotenv
+pyyaml
+pydantic
+pandas
+numpy
+tqdm
+datasets
+fastapi
+uvicorn
+streamlit
+gradio
+pytest
+rich

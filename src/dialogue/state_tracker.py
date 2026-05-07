@@ -1,4 +1,4 @@
-from state import create_empty_state, create_empty_domain_state
+from dialogue.state import create_empty_state, create_empty_domain_state
 
 
 def ensure_domain_exists(state, domain):

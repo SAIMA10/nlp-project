@@ -1,7 +1,7 @@
-from hotel_tools import search_hotels, book_hotel
-from restaurant_tools import search_restaurants, book_restaurant
-from attraction_tools import search_attractions
-from taxi_tools import book_taxi
+from tools.hotel_tools import search_hotels, book_hotel
+from tools.restaurant_tools import search_restaurants, book_restaurant
+from tools.attraction_tools import search_attractions
+from tools.taxi_tools import book_taxi
 
 
 TOOL_ALLOWED_ARGS = {

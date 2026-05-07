@@ -1,4 +1,4 @@
-from utils import RAW_DB_DIR, load_json, values_match, generate_reference
+from tools.utils import RAW_DB_DIR, load_json, values_match, generate_reference
 
 
 HOTEL_DB_PATH = RAW_DB_DIR / "hotels.json"

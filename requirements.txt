@@ -11,3 +11,8 @@ streamlit
 gradio
 pytest
 rich
+torch
+transformers
+accelerate
+sentencepiece
+protobuf

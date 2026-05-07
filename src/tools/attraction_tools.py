@@ -1,4 +1,4 @@
-from utils import RAW_DB_DIR, load_json, values_match
+from tools.utils import RAW_DB_DIR, load_json, values_match
 
 
 ATTRACTION_DB_PATH = RAW_DB_DIR / "attractions.json"

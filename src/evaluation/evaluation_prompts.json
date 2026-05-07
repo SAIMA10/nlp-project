@@ -1,0 +1,397 @@
+[
+  {
+    "id": "hotel_search_001",
+    "messages": [
+      "I need a cheap hotel in the north with free parking."
+    ],
+    "expected_domain": "hotel",
+    "expected_intent": "search_hotel",
+    "expected_slots": {
+      "hotel": {
+        "search_slots": {
+          "price_range": "cheap",
+          "area": "north",
+          "parking": "yes"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_hotel"
+  },
+  {
+    "id": "hotel_search_002",
+    "messages": [
+      "Find me a 4 star guesthouse with internet."
+    ],
+    "expected_domain": "hotel",
+    "expected_intent": "search_hotel",
+    "expected_slots": {
+      "hotel": {
+        "search_slots": {
+          "stars": "4",
+          "type": "guesthouse",
+          "internet": "yes"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_hotel"
+  },
+  {
+    "id": "hotel_booking_001",
+    "messages": [
+      "I need a cheap hotel in the north.",
+      "Book it for 2 people on Friday for 3 nights."
+    ],
+    "expected_domain": "hotel",
+    "expected_intent": "book_hotel",
+    "expected_slots": {
+      "hotel": {
+        "search_slots": {
+          "price_range": "cheap",
+          "area": "north"
+        },
+        "booking_slots": {
+          "people": "2",
+          "day": "friday",
+          "stay": "3"
+        }
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "book_hotel"
+  },
+  {
+    "id": "hotel_missing_slot_001",
+    "messages": [
+      "Book a hotel for 2 people on Friday."
+    ],
+    "expected_domain": "hotel",
+    "expected_intent": "book_hotel",
+    "expected_slots": {
+      "hotel": {
+        "search_slots": {},
+        "booking_slots": {
+          "people": "2",
+          "day": "friday"
+        }
+      }
+    },
+    "expected_missing_slots": ["stay"],
+    "expected_action": "ask_missing_slot"
+  },
+  {
+    "id": "hotel_correction_001",
+    "messages": [
+      "I need a cheap hotel in the north.",
+      "Actually make it expensive."
+    ],
+    "expected_domain": "hotel",
+    "expected_intent": "search_hotel",
+    "expected_slots": {
+      "hotel": {
+        "search_slots": {
+          "price_range": "expensive",
+          "area": "north"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_hotel"
+  },
+  {
+    "id": "restaurant_search_001",
+    "messages": [
+      "Find me an Italian restaurant in the centre."
+    ],
+    "expected_domain": "restaurant",
+    "expected_intent": "search_restaurant",
+    "expected_slots": {
+      "restaurant": {
+        "search_slots": {
+          "food": "italian",
+          "area": "centre"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_restaurant"
+  },
+  {
+    "id": "restaurant_search_002",
+    "messages": [
+      "I want a cheap Chinese restaurant."
+    ],
+    "expected_domain": "restaurant",
+    "expected_intent": "search_restaurant",
+    "expected_slots": {
+      "restaurant": {
+        "search_slots": {
+          "price_range": "cheap",
+          "food": "chinese"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_restaurant"
+  },
+  {
+    "id": "restaurant_booking_001",
+    "messages": [
+      "I want a Chinese restaurant in the east.",
+      "Reserve a table for 4 people at 7 pm on Saturday."
+    ],
+    "expected_domain": "restaurant",
+    "expected_intent": "book_restaurant",
+    "expected_slots": {
+      "restaurant": {
+        "search_slots": {
+          "food": "chinese",
+          "area": "east"
+        },
+        "booking_slots": {
+          "people": "4",
+          "time": "19:00",
+          "day": "saturday"
+        }
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "book_restaurant"
+  },
+  {
+    "id": "restaurant_missing_slot_001",
+    "messages": [
+      "Book a table at an Italian restaurant for 2 people."
+    ],
+    "expected_domain": "restaurant",
+    "expected_intent": "book_restaurant",
+    "expected_slots": {
+      "restaurant": {
+        "search_slots": {
+          "food": "italian"
+        },
+        "booking_slots": {
+          "people": "2"
+        }
+      }
+    },
+    "expected_missing_slots": ["day", "time"],
+    "expected_action": "ask_missing_slot"
+  },
+  {
+    "id": "restaurant_correction_001",
+    "messages": [
+      "Find me an expensive Indian restaurant in the centre.",
+      "Actually make that cheap."
+    ],
+    "expected_domain": "restaurant",
+    "expected_intent": "search_restaurant",
+    "expected_slots": {
+      "restaurant": {
+        "search_slots": {
+          "food": "indian",
+          "area": "centre",
+          "price_range": "cheap"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_restaurant"
+  },
+  {
+    "id": "taxi_booking_001",
+    "messages": [
+      "I need a taxi from the hotel to the restaurant by 7 pm."
+    ],
+    "expected_domain": "taxi",
+    "expected_intent": "book_taxi",
+    "expected_slots": {
+      "taxi": {
+        "search_slots": {},
+        "booking_slots": {
+          "departure": "hotel",
+          "destination": "restaurant",
+          "arrive_by": "19:00"
+        }
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "book_taxi"
+  },
+  {
+    "id": "taxi_booking_002",
+    "messages": [
+      "Book me a taxi from Cambridge station to the hotel leaving at 14:30."
+    ],
+    "expected_domain": "taxi",
+    "expected_intent": "book_taxi",
+    "expected_slots": {
+      "taxi": {
+        "search_slots": {},
+        "booking_slots": {
+          "departure": "cambridge station",
+          "destination": "hotel",
+          "leave_at": "14:30"
+        }
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "book_taxi"
+  },
+  {
+    "id": "taxi_missing_slot_001",
+    "messages": [
+      "I need a taxi to the restaurant."
+    ],
+    "expected_domain": "taxi",
+    "expected_intent": "book_taxi",
+    "expected_slots": {
+      "taxi": {
+        "search_slots": {},
+        "booking_slots": {
+          "destination": "restaurant"
+        }
+      }
+    },
+    "expected_missing_slots": ["departure", "leave_at_or_arrive_by"],
+    "expected_action": "ask_missing_slot"
+  },
+  {
+    "id": "taxi_missing_slot_002",
+    "messages": [
+      "Get me a taxi from the hotel."
+    ],
+    "expected_domain": "taxi",
+    "expected_intent": "book_taxi",
+    "expected_slots": {
+      "taxi": {
+        "search_slots": {},
+        "booking_slots": {
+          "departure": "hotel"
+        }
+      }
+    },
+    "expected_missing_slots": ["destination", "leave_at_or_arrive_by"],
+    "expected_action": "ask_missing_slot"
+  },
+  {
+    "id": "taxi_correction_001",
+    "messages": [
+      "I need a taxi from the hotel to the restaurant at 6 pm.",
+      "Actually I need to arrive by 7 pm."
+    ],
+    "expected_domain": "taxi",
+    "expected_intent": "book_taxi",
+    "expected_slots": {
+      "taxi": {
+        "search_slots": {},
+        "booking_slots": {
+          "departure": "hotel",
+          "destination": "restaurant",
+          "arrive_by": "19:00"
+        }
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "book_taxi"
+  },
+  {
+    "id": "attraction_search_001",
+    "messages": [
+      "Find me a museum in the centre."
+    ],
+    "expected_domain": "attraction",
+    "expected_intent": "search_attraction",
+    "expected_slots": {
+      "attraction": {
+        "search_slots": {
+          "type": "museum",
+          "area": "centre"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_attraction"
+  },
+  {
+    "id": "attraction_search_002",
+    "messages": [
+      "I want to visit a park in the west."
+    ],
+    "expected_domain": "attraction",
+    "expected_intent": "search_attraction",
+    "expected_slots": {
+      "attraction": {
+        "search_slots": {
+          "type": "park",
+          "area": "west"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_attraction"
+  },
+  {
+    "id": "attraction_search_003",
+    "messages": [
+      "Can you find an attraction called Kettle's Yard?"
+    ],
+    "expected_domain": "attraction",
+    "expected_intent": "search_attraction",
+    "expected_slots": {
+      "attraction": {
+        "search_slots": {
+          "name": "kettle's yard"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_attraction"
+  },
+  {
+    "id": "attraction_missing_slot_001",
+    "messages": [
+      "Find me something to do nearby."
+    ],
+    "expected_domain": "attraction",
+    "expected_intent": "search_attraction",
+    "expected_slots": {
+      "attraction": {
+        "search_slots": {},
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": ["area_or_type"],
+    "expected_action": "ask_missing_slot"
+  },
+  {
+    "id": "attraction_correction_001",
+    "messages": [
+      "Find me a museum in the east.",
+      "Actually, make it in the centre."
+    ],
+    "expected_domain": "attraction",
+    "expected_intent": "search_attraction",
+    "expected_slots": {
+      "attraction": {
+        "search_slots": {
+          "type": "museum",
+          "area": "centre"
+        },
+        "booking_slots": {}
+      }
+    },
+    "expected_missing_slots": [],
+    "expected_action": "search_attraction"
+  }
+]

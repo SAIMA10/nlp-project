@@ -1,0 +1,8 @@
+intents:
+  - search_hotel
+  - book_hotel
+  - search_restaurant
+  - book_restaurant
+  - book_taxi
+  - search_attraction
+  - unknown

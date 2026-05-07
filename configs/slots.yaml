@@ -1,0 +1,34 @@
+hotel:
+  search_slots:
+    - area
+    - price_range
+    - stars
+    - parking
+    - internet
+    - type
+  booking_slots:
+    - people
+    - day
+    - stay
+
+restaurant:
+  search_slots:
+    - area
+    - food
+    - price_range
+  booking_slots:
+    - people
+    - day
+    - time
+
+taxi:
+  booking_slots:
+    - departure
+    - destination
+    - leave_at
+    - arrive_by
+
+attraction:
+  search_slots:
+    - area
+    - type

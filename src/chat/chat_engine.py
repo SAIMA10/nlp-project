@@ -12,7 +12,6 @@ from dialogue.state_tracker import update_state
 from dialogue.policy import decide_next_action
 from dialogue.response_templates import generate_response
 from nlu.rule_based_nlu import parse_user_message as rule_based_parse
-from nlu.prompt_nlu import PromptNLU
 from tools.tool_router import run_tool
 
 
@@ -23,6 +22,7 @@ class ChatEngine:
         self.nlu_mode = nlu_mode
 
         if self.nlu_mode == "llm":
+            from nlu.prompt_nlu import PromptNLU
             self.llm_nlu = PromptNLU()
         else:
             self.llm_nlu = None

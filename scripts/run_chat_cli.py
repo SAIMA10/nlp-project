@@ -12,8 +12,8 @@ from chat.chat_engine import ChatEngine
 # Book it for 2 people on Friday for 3 nights.
 
 def main():
-    chat = ChatEngine(nlu_mode="llm")
-    # chat = ChatEngine(nlu_mode="rule_based")
+    # chat = ChatEngine(nlu_mode="llm")
+    chat = ChatEngine(nlu_mode="rule_based")
 
     print("Travel Booking Chatbot")
     print("Type 'exit' to quit.")

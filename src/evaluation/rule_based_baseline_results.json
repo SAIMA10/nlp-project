@@ -1,0 +1,885 @@
+[
+  {
+    "id": "hotel_search_001",
+    "messages": [
+      "I need a cheap hotel in the north with free parking."
+    ],
+    "expected_domain": "hotel",
+    "actual_domain": "hotel",
+    "domain_correct": true,
+    "expected_intent": "search_hotel",
+    "actual_intent": "search_hotel",
+    "intent_correct": true,
+    "expected_action": "search_hotel",
+    "actual_action": "search_hotel",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 2 matching hotel option(s). One option is city centre north b and b.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "hotel",
+      "domains": {
+        "hotel": {
+          "search_slots": {
+            "area": "north",
+            "price_range": "cheap",
+            "parking": "yes"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "hotel_search_002",
+    "messages": [
+      "Find me a 4 star guesthouse with internet."
+    ],
+    "expected_domain": "hotel",
+    "actual_domain": "hotel",
+    "domain_correct": true,
+    "expected_intent": "search_hotel",
+    "actual_intent": "search_hotel",
+    "intent_correct": true,
+    "expected_action": "search_hotel",
+    "actual_action": "search_hotel",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 18 matching hotel option(s). One option is a and b guest house.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "hotel",
+      "domains": {
+        "hotel": {
+          "search_slots": {
+            "internet": "yes",
+            "type": "guesthouse",
+            "stars": "4"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "hotel_booking_001",
+    "messages": [
+      "I need a cheap hotel in the north.",
+      "Book it for 2 people on Friday for 3 nights."
+    ],
+    "expected_domain": "hotel",
+    "actual_domain": "hotel",
+    "domain_correct": true,
+    "expected_intent": "book_hotel",
+    "actual_intent": "book_hotel",
+    "intent_correct": true,
+    "expected_action": "book_hotel",
+    "actual_action": "book_hotel",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "Your hotel booking is confirmed. Reference number: HTL-MEXT03.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "hotel",
+      "domains": {
+        "hotel": {
+          "search_slots": {
+            "area": "north",
+            "price_range": "cheap"
+          },
+          "booking_slots": {
+            "day": "friday",
+            "people": "2",
+            "stay": "3"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "hotel_missing_slot_001",
+    "messages": [
+      "Book a hotel for 2 people on Friday."
+    ],
+    "expected_domain": "hotel",
+    "actual_domain": "hotel",
+    "domain_correct": true,
+    "expected_intent": "book_hotel",
+    "actual_intent": "book_hotel",
+    "intent_correct": true,
+    "expected_action": "ask_missing_slot",
+    "actual_action": "ask_missing_slot",
+    "action_correct": true,
+    "expected_missing_slots": [
+      "stay"
+    ],
+    "actual_missing_slots": [
+      "stay"
+    ],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "skipped",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "Could you tell me how many nights?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "hotel",
+      "domains": {
+        "hotel": {
+          "search_slots": {},
+          "booking_slots": {
+            "day": "friday",
+            "people": "2"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "hotel_correction_001",
+    "messages": [
+      "I need a cheap hotel in the north.",
+      "Actually make it expensive."
+    ],
+    "expected_domain": "hotel",
+    "actual_domain": "hotel",
+    "domain_correct": true,
+    "expected_intent": "search_hotel",
+    "actual_intent": "search_hotel",
+    "intent_correct": true,
+    "expected_action": "search_hotel",
+    "actual_action": "search_hotel",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I could not find any matching hotel options. Could you try different preferences?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "hotel",
+      "domains": {
+        "hotel": {
+          "search_slots": {
+            "area": "north",
+            "price_range": "expensive"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "restaurant_search_001",
+    "messages": [
+      "Find me an Italian restaurant in the centre."
+    ],
+    "expected_domain": "restaurant",
+    "actual_domain": "restaurant",
+    "domain_correct": true,
+    "expected_intent": "search_restaurant",
+    "actual_intent": "search_restaurant",
+    "intent_correct": true,
+    "expected_action": "search_restaurant",
+    "actual_action": "search_restaurant",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 9 matching restaurant option(s). One option is pizza hut city centre.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "restaurant",
+      "domains": {
+        "restaurant": {
+          "search_slots": {
+            "area": "centre",
+            "food": "italian"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "restaurant_search_002",
+    "messages": [
+      "I want a cheap Chinese restaurant."
+    ],
+    "expected_domain": "restaurant",
+    "actual_domain": "restaurant",
+    "domain_correct": true,
+    "expected_intent": "search_restaurant",
+    "actual_intent": "search_restaurant",
+    "intent_correct": true,
+    "expected_action": "search_restaurant",
+    "actual_action": "search_restaurant",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 4 matching restaurant option(s). One option is charlie chan.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "restaurant",
+      "domains": {
+        "restaurant": {
+          "search_slots": {
+            "price_range": "cheap",
+            "food": "chinese"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "restaurant_booking_001",
+    "messages": [
+      "I want a Chinese restaurant in the east.",
+      "Reserve a table for 4 people at 7 pm on Saturday."
+    ],
+    "expected_domain": "restaurant",
+    "actual_domain": "restaurant",
+    "domain_correct": true,
+    "expected_intent": "book_restaurant",
+    "actual_intent": "book_restaurant",
+    "intent_correct": true,
+    "expected_action": "book_restaurant",
+    "actual_action": "book_restaurant",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "booking_slots",
+        "slot": "time",
+        "expected": "19:00",
+        "actual": "04:00"
+      }
+    ],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Your restaurant booking is confirmed. Reference number: RST-KAJW21.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "restaurant",
+      "domains": {
+        "restaurant": {
+          "search_slots": {
+            "area": "east",
+            "food": "chinese"
+          },
+          "booking_slots": {
+            "day": "saturday",
+            "people": "4",
+            "time": "04:00"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "restaurant_missing_slot_001",
+    "messages": [
+      "Book a table at an Italian restaurant for 2 people."
+    ],
+    "expected_domain": "restaurant",
+    "actual_domain": "restaurant",
+    "domain_correct": true,
+    "expected_intent": "book_restaurant",
+    "actual_intent": "book_restaurant",
+    "intent_correct": true,
+    "expected_action": "ask_missing_slot",
+    "actual_action": "ask_missing_slot",
+    "action_correct": true,
+    "expected_missing_slots": [
+      "day",
+      "time"
+    ],
+    "actual_missing_slots": [
+      "day"
+    ],
+    "missing_slots_correct": false,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "skipped",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Could you tell me which day?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "restaurant",
+      "domains": {
+        "restaurant": {
+          "search_slots": {
+            "food": "italian"
+          },
+          "booking_slots": {
+            "people": "2",
+            "time": "02:00"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "restaurant_correction_001",
+    "messages": [
+      "Find me an expensive Indian restaurant in the centre.",
+      "Actually make that cheap."
+    ],
+    "expected_domain": "restaurant",
+    "actual_domain": "restaurant",
+    "domain_correct": true,
+    "expected_intent": "search_restaurant",
+    "actual_intent": "search_restaurant",
+    "intent_correct": true,
+    "expected_action": "search_restaurant",
+    "actual_action": "search_restaurant",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 3 matching restaurant option(s). One option is kohinoor.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "restaurant",
+      "domains": {
+        "restaurant": {
+          "search_slots": {
+            "area": "centre",
+            "price_range": "cheap",
+            "food": "indian"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "taxi_booking_001",
+    "messages": [
+      "I need a taxi from the hotel to the restaurant by 7 pm."
+    ],
+    "expected_domain": "taxi",
+    "actual_domain": "taxi",
+    "domain_correct": true,
+    "expected_intent": "book_taxi",
+    "actual_intent": "book_taxi",
+    "intent_correct": true,
+    "expected_action": "book_taxi",
+    "actual_action": "book_taxi",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "booking_slots",
+        "slot": "departure",
+        "expected": "hotel",
+        "actual": "the hotel"
+      },
+      {
+        "section": "booking_slots",
+        "slot": "destination",
+        "expected": "restaurant",
+        "actual": "the restaurant"
+      }
+    ],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Your taxi booking is confirmed. Reference number: TXI-LA4RQ8.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "taxi",
+      "domains": {
+        "taxi": {
+          "search_slots": {},
+          "booking_slots": {
+            "arrive_by": "19:00",
+            "departure": "the hotel",
+            "destination": "the restaurant"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "taxi_booking_002",
+    "messages": [
+      "Book me a taxi from Cambridge station to the hotel leaving at 14:30."
+    ],
+    "expected_domain": "taxi",
+    "actual_domain": "taxi",
+    "domain_correct": true,
+    "expected_intent": "book_taxi",
+    "actual_intent": "book_taxi",
+    "intent_correct": true,
+    "expected_action": "book_taxi",
+    "actual_action": "book_taxi",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "booking_slots",
+        "slot": "destination",
+        "expected": "hotel",
+        "actual": "the hotel"
+      }
+    ],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Your taxi booking is confirmed. Reference number: TXI-4MY6CI.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "taxi",
+      "domains": {
+        "taxi": {
+          "search_slots": {},
+          "booking_slots": {
+            "leave_at": "14:30",
+            "departure": "cambridge station",
+            "destination": "the hotel"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "taxi_missing_slot_001",
+    "messages": [
+      "I need a taxi to the restaurant."
+    ],
+    "expected_domain": "taxi",
+    "actual_domain": "taxi",
+    "domain_correct": true,
+    "expected_intent": "book_taxi",
+    "actual_intent": "book_taxi",
+    "intent_correct": true,
+    "expected_action": "ask_missing_slot",
+    "actual_action": "ask_missing_slot",
+    "action_correct": true,
+    "expected_missing_slots": [
+      "departure",
+      "leave_at_or_arrive_by"
+    ],
+    "actual_missing_slots": [
+      "departure",
+      "leave_at_or_arrive_by"
+    ],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "booking_slots",
+        "slot": "destination",
+        "expected": "restaurant",
+        "actual": "the restaurant"
+      }
+    ],
+    "tool_status": "skipped",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Could you tell me where you are leaving from?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "taxi",
+      "domains": {
+        "taxi": {
+          "search_slots": {},
+          "booking_slots": {
+            "destination": "the restaurant"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "taxi_missing_slot_002",
+    "messages": [
+      "Get me a taxi from the hotel."
+    ],
+    "expected_domain": "taxi",
+    "actual_domain": "taxi",
+    "domain_correct": true,
+    "expected_intent": "book_taxi",
+    "actual_intent": "book_taxi",
+    "intent_correct": true,
+    "expected_action": "ask_missing_slot",
+    "actual_action": "ask_missing_slot",
+    "action_correct": true,
+    "expected_missing_slots": [
+      "destination",
+      "leave_at_or_arrive_by"
+    ],
+    "actual_missing_slots": [
+      "destination",
+      "leave_at_or_arrive_by"
+    ],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "booking_slots",
+        "slot": "departure",
+        "expected": "hotel",
+        "actual": "the hotel"
+      }
+    ],
+    "tool_status": "skipped",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Could you tell me where you are going?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "taxi",
+      "domains": {
+        "taxi": {
+          "search_slots": {},
+          "booking_slots": {
+            "departure": "the hotel"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "taxi_correction_001",
+    "messages": [
+      "I need a taxi from the hotel to the restaurant at 6 pm.",
+      "Actually I need to arrive by 7 pm."
+    ],
+    "expected_domain": "taxi",
+    "actual_domain": "taxi",
+    "domain_correct": true,
+    "expected_intent": "book_taxi",
+    "actual_intent": "book_taxi",
+    "intent_correct": true,
+    "expected_action": "book_taxi",
+    "actual_action": "book_taxi",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "booking_slots",
+        "slot": "departure",
+        "expected": "hotel",
+        "actual": "the hotel"
+      },
+      {
+        "section": "booking_slots",
+        "slot": "destination",
+        "expected": "restaurant",
+        "actual": "arrive"
+      }
+    ],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Your taxi booking is confirmed. Reference number: TXI-BT01L1.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "taxi",
+      "domains": {
+        "taxi": {
+          "search_slots": {},
+          "booking_slots": {
+            "leave_at": "18:00",
+            "departure": "the hotel",
+            "destination": "arrive",
+            "arrive_by": "19:00"
+          },
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "attraction_search_001",
+    "messages": [
+      "Find me a museum in the centre."
+    ],
+    "expected_domain": "attraction",
+    "actual_domain": "attraction",
+    "domain_correct": true,
+    "expected_intent": "search_attraction",
+    "actual_intent": "search_attraction",
+    "intent_correct": true,
+    "expected_action": "search_attraction",
+    "actual_action": "search_attraction",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 11 matching attraction option(s). One option is broughton house gallery.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "attraction",
+      "domains": {
+        "attraction": {
+          "search_slots": {
+            "area": "centre",
+            "type": "museum"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "attraction_search_002",
+    "messages": [
+      "I want to visit a park in the west."
+    ],
+    "expected_domain": "attraction",
+    "actual_domain": "attraction",
+    "domain_correct": true,
+    "expected_intent": "search_attraction",
+    "actual_intent": "search_attraction",
+    "intent_correct": true,
+    "expected_action": "search_attraction",
+    "actual_action": "search_attraction",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I could not find any matching attraction options. Could you try different preferences?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "attraction",
+      "domains": {
+        "attraction": {
+          "search_slots": {
+            "area": "west",
+            "type": "park"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  },
+  {
+    "id": "attraction_search_003",
+    "messages": [
+      "Can you find an attraction called Kettle's Yard?"
+    ],
+    "expected_domain": "attraction",
+    "actual_domain": "attraction",
+    "domain_correct": true,
+    "expected_intent": "search_attraction",
+    "actual_intent": "unknown",
+    "intent_correct": false,
+    "expected_action": "search_attraction",
+    "actual_action": "fallback",
+    "action_correct": false,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": false,
+    "slot_errors": [
+      {
+        "section": "search_slots",
+        "slot": "name",
+        "expected": "kettle's yard",
+        "actual": null
+      }
+    ],
+    "tool_status": "skipped",
+    "tool_success": false,
+    "task_completed": false,
+    "final_response": "Sorry, I could not understand that. Are you looking for a hotel, restaurant, taxi, or attraction?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": null,
+      "domains": {}
+    }
+  },
+  {
+    "id": "attraction_missing_slot_001",
+    "messages": [
+      "Find me something to do nearby."
+    ],
+    "expected_domain": "attraction",
+    "actual_domain": null,
+    "domain_correct": false,
+    "expected_intent": "search_attraction",
+    "actual_intent": "unknown",
+    "intent_correct": false,
+    "expected_action": "ask_missing_slot",
+    "actual_action": "fallback",
+    "action_correct": false,
+    "expected_missing_slots": [
+      "area_or_type"
+    ],
+    "actual_missing_slots": [],
+    "missing_slots_correct": false,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "skipped",
+    "tool_success": true,
+    "task_completed": false,
+    "final_response": "Sorry, I could not understand that. Are you looking for a hotel, restaurant, taxi, or attraction?",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": null,
+      "domains": {}
+    }
+  },
+  {
+    "id": "attraction_correction_001",
+    "messages": [
+      "Find me a museum in the east.",
+      "Actually, make it in the centre."
+    ],
+    "expected_domain": "attraction",
+    "actual_domain": "attraction",
+    "domain_correct": true,
+    "expected_intent": "search_attraction",
+    "actual_intent": "search_attraction",
+    "intent_correct": true,
+    "expected_action": "search_attraction",
+    "actual_action": "search_attraction",
+    "action_correct": true,
+    "expected_missing_slots": [],
+    "actual_missing_slots": [],
+    "missing_slots_correct": true,
+    "slots_correct": true,
+    "slot_errors": [],
+    "tool_status": "success",
+    "tool_success": true,
+    "task_completed": true,
+    "final_response": "I found 11 matching attraction option(s). One option is broughton house gallery.",
+    "final_state": {
+      "dialogue_id": "live_chat",
+      "active_domain": "attraction",
+      "domains": {
+        "attraction": {
+          "search_slots": {
+            "area": "centre",
+            "type": "museum"
+          },
+          "booking_slots": {},
+          "last_action": null,
+          "last_results": [],
+          "booking_reference": null
+        }
+      }
+    }
+  }
+]

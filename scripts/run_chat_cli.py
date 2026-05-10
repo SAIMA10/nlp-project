@@ -12,11 +12,11 @@ from chat.chat_engine import ChatEngine
 # Book it for 2 people on Friday for 3 nights.
 
 def main():
-    # chat = ChatEngine(nlu_mode="llm")
     chat = ChatEngine(nlu_mode="rule_based")
 
     print("Travel Booking Chatbot")
     print("Type 'exit' to quit.")
+    print("Type 'reset' to reset the dialogue state.")
     print("-" * 40)
 
     while True:
@@ -26,17 +26,21 @@ def main():
             print("Bot: Goodbye!")
             break
 
+        if user_message.lower() == "reset":
+            chat = ChatEngine(nlu_mode="rule_based")
+            print("Bot: Dialogue state reset.")
+            print("-" * 40)
+            continue
+
         result = chat.process_message(user_message)
 
         print(f"Bot: {result['response']}")
 
-        # Debug info while developing
         print("\n[debug]")
         print("Intent:", result["nlu_result"].get("intent"))
         print("Policy:", result["policy_decision"])
         print("State:", result["dialogue_state"])
         print("-" * 40)
-
 
 if __name__ == "__main__":
     main()

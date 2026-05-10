@@ -1,0 +1,1325 @@
+Prompt-only Mistral Travel Chatbot
+Type 'exit' to quit.
+Type 'reset' to reset the dialogue state.
+------------------------------------------------------------
+You:  I’m looking for somewhere affordable to stay up north with parking.
+Bot: I could not find any matching hotel options. Could you try different preferences?
+
+[debug]
+Raw model output:
+{
+  "domain": "hotel",
+  "intent": "search_hotel",
+  "slots": {
+    "hotel": {
+      "search_slots": {
+        "location": ["up north"],
+        "price_range": ["affordable"]
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_hotel",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "hotel",
+  "intent": "search_hotel",
+  "slots": {
+    "hotel": {
+      "search_slots": {
+        "location": "up north",
+        "price_range": "affordable"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_hotel",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_hotel",
+  "missing_slots": [],
+  "domain": "hotel"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 0,
+  "results": []
+}
+State:
+{
+  "active_domain": "hotel",
+  "domains": {
+    "hotel": {
+      "search_slots": {
+        "location": "up north",
+        "price_range": "affordable"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset
+Bot: Dialogue state reset.
+You:  I need a cheap hotel in the north.
+Bot: I found 33 matching hotel option(s). One option is a and b guest house.
+
+[debug]
+Raw model output:
+{
+  "domain": "hotel",
+  "intent": "search_hotel",
+  "slots": {
+    "hotel": {
+      "search_slots": {
+        "location": "north"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_hotel",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "hotel",
+  "intent": "search_hotel",
+  "slots": {
+    "hotel": {
+      "search_slots": {
+        "location": "north"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_hotel",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_hotel",
+  "missing_slots": [],
+  "domain": "hotel"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 33,
+  "results": [
+    {
+      "address": "124 tenison road",
+      "area": "east",
+      "internet": "yes",
+      "parking": "no",
+      "id": "0",
+      "location": [
+        52.1963733,
+        0.1987426
+      ],
+      "name": "a and b guest house",
+      "phone": "01223315702",
+      "postcode": "cb12dp",
+      "price": {
+        "double": "70",
+        "family": "90",
+        "single": "50"
+      },
+      "pricerange": "moderate",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "154 chesterton road",
+      "area": "north",
+      "internet": "yes",
+      "parking": "yes",
+      "id": "1",
+      "location": [
+        52.2157138888889,
+        0.133519444444444
+      ],
+      "name": "acorn guest house",
+      "phone": "01223353888",
+      "postcode": "cb41da",
+      "price": {
+        "double": "75",
+        "family": "105",
+        "single": "50"
+      },
+      "pricerange": "moderate",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "56 saint barnabas road",
+      "area": "centre",
+      "internet": "yes",
+      "parking": "yes",
+      "id": "2",
+      "location": [
+        52.1986444444444,
+        0.138133333333333
+      ],
+      "name": "alexander bed and breakfast",
+      "phone": "01223525725",
+      "postcode": "cb12de",
+      "price": {
+        "double": "50",
+        "single": "40"
+      },
+      "pricerange": "cheap",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "517a coldham lane",
+      "area": "east",
+      "internet": "yes",
+      "parking": "yes",
+      "id": "3",
+      "location": [
+        52.1963733,
+        0.1987426
+      ],
+      "name": "allenbell",
+      "phone": "01223210353",
+      "postcode": "cb13js",
+      "price": {
+        "double": "60",
+        "family": "90",
+        "single": "35"
+      },
+      "pricerange": "cheap",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "63 milton road",
+      "area": "north",
+      "internet": "no",
+      "parking": "no",
+      "id": "4",
+      "location": [
+        52.2173388888889,
+        0.127638888888889
+      ],
+      "name": "alpha-milton guest house",
+      "phone": "01223311625",
+      "postcode": "cb41xa",
+      "price": {
+        "double": "80",
+        "single": "45"
+      },
+      "pricerange": "moderate",
+      "stars": "3",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    }
+  ]
+}
+State:
+{
+  "active_domain": "hotel",
+  "domains": {
+    "hotel": {
+      "search_slots": {
+        "location": "north"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  Book it for 2 people on Friday for 3 nights.
+Bot: Sorry, I could not understand that. Are you looking for a hotel, restaurant, taxi, or attraction?
+
+[debug]
+Raw model output:
+{
+  "domain": "hotel",
+  "intent": "book_hotel",
+  "slots": {
+    "hotel": {
+      "booking_slots": {
+        "number_of_guests": 2,
+        "checkin_date": "Friday",
+        "num_nights": 3
+      }
+    }
+  },
+  "next_action": "confirm_booking",
+  "missing_slots": ["location"]
+
+Normalized output:
+null
+Policy:
+{
+  "next_action": "fallback",
+  "missing_slots": [],
+  "domain": null
+}
+Tool result:
+{
+  "status": "skipped",
+  "reason": "fallback"
+}
+State:
+{
+  "active_domain": "hotel",
+  "domains": {
+    "hotel": {
+      "search_slots": {
+        "location": "north"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  I’d like somewhere to eat around the city centre, preferably Italian.
+Bot: I found 110 matching restaurant option(s). One option is pizza hut city centre.
+
+[debug]
+Raw model output:
+{
+  "domain": "restaurant",
+  "intent": "search_restaurant",
+  "slots": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": ["Italian"],
+        "location": ["city centre"]
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_restaurant",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "restaurant",
+  "intent": "search_restaurant",
+  "slots": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": "italian",
+        "location": "city centre"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_restaurant",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_restaurant",
+  "missing_slots": [],
+  "domain": "restaurant"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 110,
+  "results": [
+    {
+      "address": "Regent Street City Centre",
+      "area": "centre",
+      "food": "italian",
+      "id": "19210",
+      "introduction": "Pizza hut is a large chain with restaurants nationwide offering convenience pizzas pasta and salads to eat in or take away",
+      "location": [
+        52.20103,
+        0.126023
+      ],
+      "name": "pizza hut city centre",
+      "phone": "01223323737",
+      "postcode": "cb21ab",
+      "pricerange": "cheap",
+      "type": "restaurant"
+    },
+    {
+      "address": "Finders Corner Newmarket Road",
+      "area": "east",
+      "food": "international",
+      "id": "30650",
+      "introduction": "",
+      "location": [
+        52.21768,
+        0.224907
+      ],
+      "name": "the missing sock",
+      "phone": "01223812660",
+      "postcode": "cb259aq",
+      "pricerange": "cheap",
+      "signature": "african babooti",
+      "type": "restaurant"
+    },
+    {
+      "address": "106 Regent Street City Centre",
+      "area": "centre",
+      "food": "indian",
+      "id": "19214",
+      "introduction": "curry garden serves traditional indian and bangladeshi cuisine cooked with fresh produce delivered every day",
+      "location": [
+        52.200187,
+        0.126407
+      ],
+      "name": "curry garden",
+      "phone": "01223302330",
+      "postcode": "cb21dp",
+      "pricerange": "expensive",
+      "type": "restaurant"
+    },
+    {
+      "address": "82 Cherry Hinton Road Cherry Hinton",
+      "area": "south",
+      "food": "chinese",
+      "id": "19192",
+      "location": [
+        52.188528,
+        0.140627
+      ],
+      "name": "the good luck chinese food takeaway",
+      "phone": "01223244149",
+      "postcode": "cb17ag",
+      "pricerange": "expensive",
+      "type": "restaurant"
+    },
+    {
+      "address": "G4 Cambridge Leisure Park Clifton Way Cherry Hinton",
+      "area": "south",
+      "food": "italian",
+      "id": "19196",
+      "introduction": "pizza hut is a large chain with restaurants nationwide offering convenience pizzas pasta and salads to eat in or take away",
+      "location": [
+        52.190176,
+        0.13699
+      ],
+      "name": "pizza hut cherry hinton",
+      "phone": "01223323737",
+      "postcode": "cb17dy",
+      "pricerange": "moderate",
+      "type": "restaurant"
+    }
+  ]
+}
+State:
+{
+  "active_domain": "restaurant",
+  "domains": {
+    "hotel": {
+      "search_slots": {
+        "location": "north"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    },
+    "restaurant": {
+      "search_slots": {
+        "cuisine": "italian",
+        "location": "city centre"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset
+Bot: Dialogue state reset.
+You:  Find me a Chinese restaurant in the east.
+Bot: I found 110 matching restaurant option(s). One option is pizza hut city centre.
+
+[debug]
+Raw model output:
+{
+  "domain": "restaurant",
+  "intent": "search_restaurant",
+  "slots": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": ["Chinese"],
+        "location": ["east"]
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_restaurant",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "restaurant",
+  "intent": "search_restaurant",
+  "slots": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": "chinese",
+        "location": "east"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_restaurant",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_restaurant",
+  "missing_slots": [],
+  "domain": "restaurant"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 110,
+  "results": [
+    {
+      "address": "Regent Street City Centre",
+      "area": "centre",
+      "food": "italian",
+      "id": "19210",
+      "introduction": "Pizza hut is a large chain with restaurants nationwide offering convenience pizzas pasta and salads to eat in or take away",
+      "location": [
+        52.20103,
+        0.126023
+      ],
+      "name": "pizza hut city centre",
+      "phone": "01223323737",
+      "postcode": "cb21ab",
+      "pricerange": "cheap",
+      "type": "restaurant"
+    },
+    {
+      "address": "Finders Corner Newmarket Road",
+      "area": "east",
+      "food": "international",
+      "id": "30650",
+      "introduction": "",
+      "location": [
+        52.21768,
+        0.224907
+      ],
+      "name": "the missing sock",
+      "phone": "01223812660",
+      "postcode": "cb259aq",
+      "pricerange": "cheap",
+      "signature": "african babooti",
+      "type": "restaurant"
+    },
+    {
+      "address": "106 Regent Street City Centre",
+      "area": "centre",
+      "food": "indian",
+      "id": "19214",
+      "introduction": "curry garden serves traditional indian and bangladeshi cuisine cooked with fresh produce delivered every day",
+      "location": [
+        52.200187,
+        0.126407
+      ],
+      "name": "curry garden",
+      "phone": "01223302330",
+      "postcode": "cb21dp",
+      "pricerange": "expensive",
+      "type": "restaurant"
+    },
+    {
+      "address": "82 Cherry Hinton Road Cherry Hinton",
+      "area": "south",
+      "food": "chinese",
+      "id": "19192",
+      "location": [
+        52.188528,
+        0.140627
+      ],
+      "name": "the good luck chinese food takeaway",
+      "phone": "01223244149",
+      "postcode": "cb17ag",
+      "pricerange": "expensive",
+      "type": "restaurant"
+    },
+    {
+      "address": "G4 Cambridge Leisure Park Clifton Way Cherry Hinton",
+      "area": "south",
+      "food": "italian",
+      "id": "19196",
+      "introduction": "pizza hut is a large chain with restaurants nationwide offering convenience pizzas pasta and salads to eat in or take away",
+      "location": [
+        52.190176,
+        0.13699
+      ],
+      "name": "pizza hut cherry hinton",
+      "phone": "01223323737",
+      "postcode": "cb17dy",
+      "pricerange": "moderate",
+      "type": "restaurant"
+    }
+  ]
+}
+State:
+{
+  "active_domain": "restaurant",
+  "domains": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": "chinese",
+        "location": "east"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  Reserve a table for 4 people at 7 pm on Saturday.
+Bot: Your restaurant booking is confirmed. Reference number: RST-J45D0Y.
+
+[debug]
+Raw model output:
+{
+  "domain": "restaurant",
+  "intent": "book_restaurant",
+  "slots": {
+    "restaurant": {
+      "search_slots": {"cuisine": "chinese", "location": "east"},
+      "booking_slots": {"number_of_people": 4, "time": "7pm", "day": "Saturday"}
+    }
+  },
+  "next_action": "confirm_reservation",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "restaurant",
+  "intent": "book_restaurant",
+  "slots": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": "chinese",
+        "location": "east"
+      },
+      "booking_slots": {
+        "number_of_people": "4",
+        "time": "19:00",
+        "day": "saturday",
+        "people": "4"
+      }
+    }
+  },
+  "next_action": "book_restaurant",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "book_restaurant",
+  "missing_slots": [],
+  "domain": "restaurant"
+}
+Tool result:
+{
+  "status": "success",
+  "booking_reference": "RST-J45D0Y",
+  "booking": {
+    "name": "pizza hut city centre",
+    "people": "4",
+    "day": "saturday",
+    "time": "19:00"
+  }
+}
+State:
+{
+  "active_domain": "restaurant",
+  "domains": {
+    "restaurant": {
+      "search_slots": {
+        "cuisine": "chinese",
+        "location": "east"
+      },
+      "booking_slots": {
+        "number_of_people": "4",
+        "time": "19:00",
+        "day": "saturday",
+        "people": "4"
+      },
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset
+Bot: Dialogue state reset.
+You:  Book a hotel for 2 people on Friday.
+Bot: I found 33 matching hotel option(s). One option is a and b guest house.
+
+[debug]
+Raw model output:
+{
+  "domain": "hotel",
+  "intent": "search_hotel",
+  "slots": {
+    "hotel": {
+      "search_slots": {
+        "number_of_guests": 2,
+        "checkin_date": "Friday"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_hotel",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "hotel",
+  "intent": "search_hotel",
+  "slots": {
+    "hotel": {
+      "search_slots": {
+        "number_of_guests": "2",
+        "checkin_date": "friday"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_hotel",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_hotel",
+  "missing_slots": [],
+  "domain": "hotel"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 33,
+  "results": [
+    {
+      "address": "124 tenison road",
+      "area": "east",
+      "internet": "yes",
+      "parking": "no",
+      "id": "0",
+      "location": [
+        52.1963733,
+        0.1987426
+      ],
+      "name": "a and b guest house",
+      "phone": "01223315702",
+      "postcode": "cb12dp",
+      "price": {
+        "double": "70",
+        "family": "90",
+        "single": "50"
+      },
+      "pricerange": "moderate",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "154 chesterton road",
+      "area": "north",
+      "internet": "yes",
+      "parking": "yes",
+      "id": "1",
+      "location": [
+        52.2157138888889,
+        0.133519444444444
+      ],
+      "name": "acorn guest house",
+      "phone": "01223353888",
+      "postcode": "cb41da",
+      "price": {
+        "double": "75",
+        "family": "105",
+        "single": "50"
+      },
+      "pricerange": "moderate",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "56 saint barnabas road",
+      "area": "centre",
+      "internet": "yes",
+      "parking": "yes",
+      "id": "2",
+      "location": [
+        52.1986444444444,
+        0.138133333333333
+      ],
+      "name": "alexander bed and breakfast",
+      "phone": "01223525725",
+      "postcode": "cb12de",
+      "price": {
+        "double": "50",
+        "single": "40"
+      },
+      "pricerange": "cheap",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "517a coldham lane",
+      "area": "east",
+      "internet": "yes",
+      "parking": "yes",
+      "id": "3",
+      "location": [
+        52.1963733,
+        0.1987426
+      ],
+      "name": "allenbell",
+      "phone": "01223210353",
+      "postcode": "cb13js",
+      "price": {
+        "double": "60",
+        "family": "90",
+        "single": "35"
+      },
+      "pricerange": "cheap",
+      "stars": "4",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    },
+    {
+      "address": "63 milton road",
+      "area": "north",
+      "internet": "no",
+      "parking": "no",
+      "id": "4",
+      "location": [
+        52.2173388888889,
+        0.127638888888889
+      ],
+      "name": "alpha-milton guest house",
+      "phone": "01223311625",
+      "postcode": "cb41xa",
+      "price": {
+        "double": "80",
+        "single": "45"
+      },
+      "pricerange": "moderate",
+      "stars": "3",
+      "takesbookings": "yes",
+      "type": "guesthouse"
+    }
+  ]
+}
+State:
+{
+  "active_domain": "hotel",
+  "domains": {
+    "hotel": {
+      "search_slots": {
+        "number_of_guests": "2",
+        "checkin_date": "friday"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset
+Bot: Dialogue state reset.
+You:  Can you get me a cab from my hotel to the restaurant by 7 pm?
+Bot: Your taxi booking is confirmed. Reference number: TXI-ULQEGG.
+
+[debug]
+Raw model output:
+{
+  "domain": "taxi",
+  "intent": "book_taxi",
+  "slots": {
+    "taxi": {
+      "booking_slots": {
+        "pickup_location": "hotel",
+        "dropoff_location": "restaurant",
+        "time": "7 pm"
+      }
+    }
+  },
+  "next_action": "confirm_taxi_reservation",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "taxi",
+  "intent": "book_taxi",
+  "slots": {
+    "taxi": {
+      "search_slots": {},
+      "booking_slots": {
+        "pickup_location": "hotel",
+        "dropoff_location": "restaurant",
+        "time": "7 pm",
+        "departure": "my hotel",
+        "destination": "restaurant",
+        "arrive_by": "19:00"
+      }
+    }
+  },
+  "next_action": "book_taxi",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "book_taxi",
+  "missing_slots": [],
+  "domain": "taxi"
+}
+Tool result:
+{
+  "status": "success",
+  "booking_reference": "TXI-ULQEGG",
+  "booking": {
+    "departure": "my hotel",
+    "destination": "restaurant",
+    "leave_at": null,
+    "arrive_by": "19:00"
+  },
+  "taxi": {
+    "car_type": "toyota prius",
+    "phone": "01223 555555"
+  }
+}
+State:
+{
+  "active_domain": "taxi",
+  "domains": {
+    "taxi": {
+      "search_slots": {},
+      "booking_slots": {
+        "pickup_location": "hotel",
+        "dropoff_location": "restaurant",
+        "time": "7 pm",
+        "departure": "my hotel",
+        "destination": "restaurant",
+        "arrive_by": "19:00"
+      },
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset
+Bot: Dialogue state reset.
+You:  I need a taxi from the hotel.
+Bot: Could you tell me where you are going?
+
+[debug]
+Raw model output:
+{
+  "domain": "taxi",
+  "intent": "search_taxi",
+  "slots": {
+    "taxi": {
+      "search_slots": {
+        "from": "hotel"
+      }
+    }
+  },
+  "next_action": "search_taxi",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "taxi",
+  "intent": "book_taxi",
+  "slots": {
+    "taxi": {
+      "search_slots": {
+        "from": "hotel"
+      },
+      "booking_slots": {
+        "departure": "hotel"
+      }
+    }
+  },
+  "next_action": "ask_missing_slot",
+  "missing_slots": [
+    "destination",
+    "leave_at_or_arrive_by"
+  ]
+}
+Policy:
+{
+  "next_action": "ask_missing_slot",
+  "missing_slots": [
+    "destination",
+    "leave_at_or_arrive_by"
+  ],
+  "domain": "taxi"
+}
+Tool result:
+{
+  "status": "skipped",
+  "reason": "ask_missing_slot"
+}
+State:
+{
+  "active_domain": "taxi",
+  "domains": {
+    "taxi": {
+      "search_slots": {
+        "from": "hotel"
+      },
+      "booking_slots": {
+        "departure": "hotel"
+      },
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  To the restaurant by 7 pm.
+Bot: Something went wrong while using the booking tool.
+
+[debug]
+Raw model output:
+{
+  "domain": "taxi",
+  "intent": "search_taxi",
+  "slots": {
+    "taxi": {
+      "search_slots": {
+        "to": "restaurant"
+      },
+      "booking_slots": {
+        "time": "7pm"
+      }
+    }
+  },
+  "next_action": "search_taxi",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "taxi",
+  "intent": "search_taxi",
+  "slots": {
+    "taxi": {
+      "search_slots": {
+        "to": "restaurant"
+      },
+      "booking_slots": {
+        "time": "7pm",
+        "destination": "restaurant",
+        "arrive_by": "19:00"
+      }
+    }
+  },
+  "next_action": "search_taxi",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_taxi",
+  "missing_slots": [],
+  "domain": "taxi"
+}
+Tool result:
+{
+  "status": "error",
+  "error": "unknown_action",
+  "action": "search_taxi"
+}
+State:
+{
+  "active_domain": "taxi",
+  "domains": {
+    "taxi": {
+      "search_slots": {
+        "from": "hotel",
+        "to": "restaurant"
+      },
+      "booking_slots": {
+        "departure": "hotel",
+        "time": "7pm",
+        "destination": "restaurant",
+        "arrive_by": "19:00"
+      },
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset
+Bot: Dialogue state reset.
+You:  I want to visit a park in the west.
+Bot: I found 79 matching attraction option(s). One option is abbey pool and astroturf pitch.
+
+[debug]
+Raw model output:
+{
+  "domain": "attraction",
+  "intent": "search_attraction",
+  "slots": {
+    "attraction": {
+      "search_slots": {
+        "location": ["west"]
+      }
+    }
+  },
+  "next_action": "search_attraction",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "attraction",
+  "intent": "search_attraction",
+  "slots": {
+    "attraction": {
+      "search_slots": {
+        "location": "west"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_attraction",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_attraction",
+  "missing_slots": [],
+  "domain": "attraction"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 79,
+  "results": [
+    {
+      "address": "pool way, whitehill road, off newmarket road",
+      "area": "east",
+      "entrance fee": "?",
+      "id": "1",
+      "location": [
+        52.208789,
+        0.154883
+      ],
+      "name": "abbey pool and astroturf pitch",
+      "openhours": "?",
+      "phone": "01223902088",
+      "postcode": "cb58nt",
+      "pricerange": "?",
+      "type": "swimmingpool"
+    },
+    {
+      "address": "park street",
+      "area": "centre",
+      "entrance fee": "?",
+      "id": "2",
+      "location": [
+        52.208699,
+        0.12006
+      ],
+      "name": "adc theatre",
+      "openhours": "?",
+      "phone": "01223300085",
+      "postcode": "cb58as",
+      "pricerange": "?",
+      "type": "theatre"
+    },
+    {
+      "address": "jesus lane",
+      "area": "centre",
+      "entrance fee": "free",
+      "id": "3",
+      "location": [
+        52.2078083333333,
+        0.125616666666667
+      ],
+      "name": "all saints church",
+      "openhours": "it opens normally daily from 9 a.m. to 5 p.m., at other times the key can be borrowed from a nearby key holder.",
+      "phone": "01223452587",
+      "postcode": "cb58bs",
+      "pricerange": "free",
+      "type": "architecture"
+    },
+    {
+      "address": "heidelberg gardens, lion yard",
+      "area": "centre",
+      "entrance fee": "5 pounds",
+      "id": "4",
+      "location": [
+        52.20478,
+        0.11975
+      ],
+      "name": "ballare",
+      "openhours": "it opens from 10:30 p.m. to 03:30 a.m on thursday, from 11:00 p.m. to 04:00 a.m. on friday, from 10:00 p.m. to 03:30 a.m. on saturday, and from 10:00 p.m. to 02:30 a.m. on monday",
+      "phone": "01223364222",
+      "postcode": "cb23na",
+      "pricerange": "moderate",
+      "type": "nightclub"
+    },
+    {
+      "address": "98 king street",
+      "area": "centre",
+      "entrance fee": "free",
+      "id": "5",
+      "location": [
+        52.207409,
+        0.126738
+      ],
+      "name": "broughton house gallery",
+      "openhours": "?",
+      "phone": "01223314960",
+      "postcode": "cb11ln",
+      "pricerange": "free",
+      "type": "museum"
+    }
+  ]
+}
+State:
+{
+  "active_domain": "attraction",
+  "domains": {
+    "attraction": {
+      "search_slots": {
+        "location": "west"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  reset 
+Bot: Dialogue state reset.
+You:  Can you find an attraction called Kettle's Yard?
+Bot: I found 1 matching attraction option(s). One option is kettle's yard.
+
+[debug]
+Raw model output:
+{
+  "domain": "attraction",
+  "intent": "search_attraction",
+  "slots": {
+    "attraction": {
+      "search_slots": {
+        "name": ["Kettle's Yard"]
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_attraction",
+  "missing_slots": []
+}
+
+Normalized output:
+{
+  "domain": "attraction",
+  "intent": "search_attraction",
+  "slots": {
+    "attraction": {
+      "search_slots": {
+        "name": "kettle's yard"
+      },
+      "booking_slots": {}
+    }
+  },
+  "next_action": "search_attraction",
+  "missing_slots": []
+}
+Policy:
+{
+  "next_action": "search_attraction",
+  "missing_slots": [],
+  "domain": "attraction"
+}
+Tool result:
+{
+  "status": "success",
+  "count": 1,
+  "results": [
+    {
+      "address": "castle street",
+      "area": "west",
+      "entrance fee": "free",
+      "id": "37",
+      "location": [
+        52.212405,
+        0.113075
+      ],
+      "name": "kettle's yard",
+      "openhours": "it opens from 11:30 a.m. to 5:00 p.m. tuesday to sunday",
+      "phone": "01223748100",
+      "postcode": "cb30aq",
+      "pricerange": "free",
+      "type": "museum"
+    }
+  ]
+}
+State:
+{
+  "active_domain": "attraction",
+  "domains": {
+    "attraction": {
+      "search_slots": {
+        "name": "kettle's yard"
+      },
+      "booking_slots": {},
+      "last_action": null,
+      "last_results": [],
+      "booking_reference": null
+    }
+  }
+}
+------------------------------------------------------------
+You:  quit
+Bot: Goodbye!

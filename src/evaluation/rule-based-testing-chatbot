@@ -1,0 +1,134 @@
+Travel Booking Chatbot
+Type 'exit' to quit.
+Type 'reset' to reset the dialogue state.
+----------------------------------------
+You: I’m looking for somewhere affordable to stay up north with parking.
+Bot: I found 1 matching attraction option(s). One option is milton country park.
+
+[debug]
+Intent: search_attraction
+Policy: {'next_action': 'search_attraction', 'missing_slots': [], 'domain': 'attraction'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'attraction', 'domains': {'attraction': {'search_slots': {'area': 'north', 'type': 'park'}, 'booking_slots': {}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: I need a cheap hotel in the north.
+Bot: I found 2 matching hotel option(s). One option is city centre north b and b.
+
+[debug]
+Intent: search_hotel
+Policy: {'next_action': 'search_hotel', 'missing_slots': [], 'domain': 'hotel'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'hotel', 'domains': {'hotel': {'search_slots': {'area': 'north', 'price_range': 'cheap'}, 'booking_slots': {}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: Book it for 2 people on Friday for 3 nights.
+Bot: Your hotel booking is confirmed. Reference number: HTL-W2EDD8.
+
+[debug]
+Intent: book_hotel
+Policy: {'next_action': 'book_hotel', 'missing_slots': [], 'domain': 'hotel'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'hotel', 'domains': {'hotel': {'search_slots': {'area': 'north', 'price_range': 'cheap'}, 'booking_slots': {'day': 'friday', 'people': '2', 'stay': '3'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: I’d like somewhere to eat around the city centre, preferably Italian.
+Bot: Sorry, I could not understand that. Are you looking for a hotel, restaurant, taxi, or attraction?
+
+[debug]
+Intent: unknown
+Policy: {'next_action': 'fallback', 'missing_slots': [], 'domain': None}
+State: {'dialogue_id': 'live_chat', 'active_domain': None, 'domains': {}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: Find me a Chinese restaurant in the east.
+Bot: I found 1 matching restaurant option(s). One option is yu garden.
+
+[debug]
+Intent: search_restaurant
+Policy: {'next_action': 'search_restaurant', 'missing_slots': [], 'domain': 'restaurant'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'restaurant', 'domains': {'restaurant': {'search_slots': {'area': 'east', 'food': 'chinese'}, 'booking_slots': {}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: Reserve a table for 4 people at 7 pm on Saturday.    
+Bot: Your restaurant booking is confirmed. Reference number: RST-WSICT4.
+
+[debug]
+Intent: book_restaurant
+Policy: {'next_action': 'book_restaurant', 'missing_slots': [], 'domain': 'restaurant'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'restaurant', 'domains': {'restaurant': {'search_slots': {'area': 'east', 'food': 'chinese'}, 'booking_slots': {'day': 'saturday', 'people': '4', 'time': '04:00'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: Book a hotel for 2 people on Friday.
+Bot: Could you tell me how many nights?
+
+[debug]
+Intent: book_hotel
+Policy: {'next_action': 'ask_missing_slot', 'missing_slots': ['stay'], 'domain': 'hotel'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'hotel', 'domains': {'hotel': {'search_slots': {}, 'booking_slots': {'day': 'friday', 'people': '2'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: For 3 nights.
+Bot: Your hotel booking is confirmed. Reference number: HTL-Q4PWQO.
+
+[debug]
+Intent: book_hotel
+Policy: {'next_action': 'book_hotel', 'missing_slots': [], 'domain': 'hotel'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'hotel', 'domains': {'hotel': {'search_slots': {}, 'booking_slots': {'day': 'friday', 'people': '2', 'stay': '3'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: Can you get me a cab from my hotel to the restaurant by 7 pm?
+Bot: Your taxi booking is confirmed. Reference number: TXI-QLTOPV.
+
+[debug]
+Intent: book_taxi
+Policy: {'next_action': 'book_taxi', 'missing_slots': [], 'domain': 'taxi'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'taxi', 'domains': {'taxi': {'search_slots': {}, 'booking_slots': {'arrive_by': '19:00', 'departure': 'my hotel', 'destination': 'the restaurant'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: I need a taxi from the hotel.
+Bot: Could you tell me where you are going?
+
+[debug]
+Intent: book_taxi
+Policy: {'next_action': 'ask_missing_slot', 'missing_slots': ['destination', 'leave_at_or_arrive_by'], 'domain': 'taxi'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'taxi', 'domains': {'taxi': {'search_slots': {}, 'booking_slots': {'departure': 'the hotel'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: To the restaurant by 7 pm.
+Bot: Your taxi booking is confirmed. Reference number: TXI-F9DG6S.
+
+[debug]
+Intent: book_taxi
+Policy: {'next_action': 'book_taxi', 'missing_slots': [], 'domain': 'taxi'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'taxi', 'domains': {'taxi': {'search_slots': {}, 'booking_slots': {'departure': 'the hotel', 'arrive_by': '19:00', 'destination': 'the restaurant'}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: I want to visit a park in the west.
+Bot: I could not find any matching attraction options. Could you try different preferences?
+
+[debug]
+Intent: search_attraction
+Policy: {'next_action': 'search_attraction', 'missing_slots': [], 'domain': 'attraction'}
+State: {'dialogue_id': 'live_chat', 'active_domain': 'attraction', 'domains': {'attraction': {'search_slots': {'area': 'west', 'type': 'park'}, 'booking_slots': {}, 'last_action': None, 'last_results': [], 'booking_reference': None}}}
+----------------------------------------
+You: reset
+Bot: Dialogue state reset.
+----------------------------------------
+You: Can you find an attraction called Kettle's Yard?
+Bot: Sorry, I could not understand that. Are you looking for a hotel, restaurant, taxi, or attraction?
+
+[debug]
+Intent: unknown
+Policy: {'next_action': 'fallback', 'missing_slots': [], 'domain': None}
+State: {'dialogue_id': 'live_chat', 'active_domain': None, 'domains': {}}
+----------------------------------------
+You: quit
+Bot: Goodbye!

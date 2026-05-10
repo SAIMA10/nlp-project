@@ -6,7 +6,7 @@ from preprocessing.define_intent import define_intents_for_record
 
 DATASETS = {
     "train": {
-        "input": Path("data/processed/train.jsonl"),
+        "input": Path("data/processed/train_combined.jsonl"),
         "output": Path("data/processed/train_normalized.jsonl"),
     },
     "dev": {

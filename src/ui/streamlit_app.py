@@ -38,10 +38,13 @@ html, body, [class*="css"] {
     color: var(--mint) !important;
 }
 
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu, footer { visibility: hidden; }
+header { visibility: visible !important; }
+header [data-testid="stToolbar"] { visibility: visible !important; }
+
 .block-container {
-    padding: 2rem 2.5rem 4rem !important;
-    max-width: 1100px !important;
+    max-width: 1180px !important;
+    padding: 4.5rem 3rem 5rem !important;
 }
 
 [data-testid="stSidebar"] {
